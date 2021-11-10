@@ -5,6 +5,7 @@ import Carousel from './components/Carousel';
 import GuitarList from './components/GuitarList';
 import GuitarItem from './components/GuitarItem'
 import ProductDetails from './components/ProductDetails';
+import About from './components/About';
 import Shop from './components/Shop';
 // import Test from './components/Test';
 import { useState } from 'react';
@@ -12,9 +13,7 @@ import { BrowserRouter as Router, Route, Routes, Switch } from "react-router-dom
 
 
 
-function App(props) {
-  const {match} = props;
-console.log('match', match)
+function App() {
 
   const [cartItems, setCartItems] = useState([]);
   // console.log("cartItems in App.js", cartItems)
@@ -49,12 +48,13 @@ console.log('match', match)
   return (
       <div className="container">   
         <Navbar onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}/>
-        <Router>
+        
           <Routes> 
               <Route exact path="/" element={<Shop onAdd={onAdd}/>}/>
-              <Route path="/guitars/:id" children={match} element={<ProductDetails />}/>
+              <Route path="/about" element={<About/>}/>
+              <Route path="/guitars/:id"  element={<ProductDetails />}/>
           </Routes>
-        </Router>
+       
       </div>
   )
 };
