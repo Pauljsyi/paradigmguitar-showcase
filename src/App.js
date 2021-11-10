@@ -52,7 +52,7 @@ function App() {
           <Routes> 
               <Route exact path="/" element={<Shop onAdd={onAdd}/>}/>
               <Route path="/about" element={<About/>}/>
-              <Route path="/guitars/:id"  element={<ProductDetails />}/>
+              <Route path="/guitars/:id"  element={<ProductDetails onAdd={onAdd}/>}/>
           </Routes>
        
       </div>

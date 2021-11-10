@@ -1,8 +1,4 @@
 import React from 'react'
-// import Card from './Card'
-// import { useState } from 'react';
-// import Test from './Test';
-// import ProductDetails from './ProductDetails.js';
 import {Link} from 'react-router-dom'
 
 

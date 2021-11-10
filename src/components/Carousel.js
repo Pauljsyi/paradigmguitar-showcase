@@ -3,6 +3,7 @@ import Images from './Images';
 import custom from '../featured/custom.jpg';
 import luthier from '../featured/luthier.jpg';
 import vintage from '../featured/vintage.jpg';
+import musician from '../featured/musician.jpg';
 
 
 
@@ -11,7 +12,7 @@ const Carousel = () => {
   // create an array of assets to display inside carousel
   
   const [x, setX] = useState(0);
-  let carouselArr = [<Images src={custom}/>, <Images src={luthier} />, <Images src={vintage} />];
+  let carouselArr = [<Images src={custom}/>, <Images src={luthier} />, <Images src={musician} />, <Images src={vintage} />];
   const goLeft = () => {
     x === 0 ? setX(-100 * (carouselArr.length - 1)) : setX(x + 100)
   };

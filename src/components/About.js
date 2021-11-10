@@ -17,7 +17,7 @@ const About = () => {
             Sincerely,<br/><br/>
 
             Paul Yi</p>
-                    </div>
+        </div>
     )
 }
 

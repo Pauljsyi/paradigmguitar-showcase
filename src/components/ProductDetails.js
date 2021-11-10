@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const ProductDetails = (props) => {
+    const { onAdd } = props;
+    console.log('onadd', onAdd)
     const { id } = useParams();
     const [item, getItem] = useState({})
     const url = `http://127.0.0.1:5000/guitars/${id}`
@@ -27,10 +29,18 @@ const ProductDetails = (props) => {
 
 //   console.log('props', props)
     return (
-        <div>
-           <h1 className="black">{item.name}</h1>
-           <h1>{item.price}</h1>
-           <img src={item.img} alt={item.id} />
+        <div className="pd-container">
+            
+            <div className="item-display">
+                <img src={item.img} alt={item.id} />
+           </div>
+            <div className="item-details">
+                <h1 className="black">{item.name}</h1>
+                <h1>${item.price}</h1>   
+                <button onClick={() => onAdd(item)}>add to cart</button>
+            </div>
+           
+           
         </div>
     )
 }

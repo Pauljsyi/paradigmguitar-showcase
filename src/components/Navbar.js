@@ -12,14 +12,19 @@ const Navbar = (props) => {
     // <Router>
       <div>
         <nav>
-          <Link to="/" >
+          <Link to="/" className="navLink">
             <h1 className="logo">Paradigm Guitar</h1> 
           </Link>
-          <Link to="/about">
+          <Link to="/about" className="navLink">
             <h6>ABOUT</h6>
           </Link>
-          <Link to="/#shop">
+          <Link to="/gallery" className="navLink">
+            <h6>GALLERY</h6>
+          </Link>
+          <Link to="/" className="navLink">
+          <div className="shop" onClick={() => window.location.replace("/#shop")}>
             <h6>SHOP</h6>
+          </div>
           </Link>
           <div className="cart">
               <i className="fas fa-shopping-cart"></i>
