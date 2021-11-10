@@ -3,17 +3,18 @@ import Navbar from './components/Navbar';
 import Cart from './components/Cart';
 import Carousel from './components/Carousel';
 import GuitarList from './components/GuitarList';
+import GuitarItem from './components/GuitarItem'
 import ProductDetails from './components/ProductDetails';
 import Shop from './components/Shop';
 // import Test from './components/Test';
 import { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes, Switch } from "react-router-dom"
 
 
 
 function App(props) {
-  const {item} = props;
-  console.log('item from APP.js', props)
+  const {match} = props;
+console.log('match', match)
 
   const [cartItems, setCartItems] = useState([]);
   // console.log("cartItems in App.js", cartItems)
@@ -49,9 +50,9 @@ function App(props) {
       <div className="container">   
         <Navbar onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}/>
         <Router>
-          <Routes>
-            <Route path="/" element={<Shop onAdd={onAdd}/>}/>
-            <Route path="/guitar" element={<ProductDetails/>}/>
+          <Routes> 
+              <Route exact path="/" element={<Shop onAdd={onAdd}/>}/>
+              <Route path="/guitars/:id" children={match} element={<ProductDetails />}/>
           </Routes>
         </Router>
       </div>
