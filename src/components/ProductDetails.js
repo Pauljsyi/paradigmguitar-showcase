@@ -29,6 +29,8 @@ const ProductDetails = (props) => {
     return (
         <div>
            <h1 className="black">{item.name}</h1>
+           <h1>{item.price}</h1>
+           <img src={item.img} alt={item.id} />
         </div>
     )
 }
