@@ -11,7 +11,7 @@ const Navbar = (props) => {
   return (
     // <Router>
       <div>
-        <nav>
+        <nav className="navbar">
           <Link to="/" className="navLink">
             <h1 className="logo">Paradigm Guitar</h1> 
           </Link>
@@ -26,12 +26,12 @@ const Navbar = (props) => {
             <h6>SHOP</h6>
           </div>
           </Link>
-          <div className="cart">
+          <a className="cart">
               <i className="fas fa-shopping-cart"></i>
-              <a className="cart-content"> 
-              <Cart onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}/>
+              <a className="cart-icon"> 
+              {/* <Cart onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}/> */}
           </a>
-            </div>
+            </a>
         </nav>
       </div>
     // </Router>

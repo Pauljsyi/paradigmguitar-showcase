@@ -30,7 +30,7 @@ const Shop = (props) => {
         <div>
             <Carousel /> 
               <div className="shop-title" id={'shop'}>
-                <h1>SHOP</h1>
+                <h1 >SHOP</h1>
               </div>
               <GuitarList onAdd={onAdd}/>
               
