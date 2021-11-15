@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Cart from './Cart';
 // import GuitarList from './GuitarList'
 // import { useState } from 'react';
 import {BrowserRouter as Router, Link} from 'react-router-dom';
+import useOnClickOutside from '../hooks/useOnClickOutside'
 
 const Navbar = (props) => {
   const {onAdd, onRemove, cartItems} = props;
   const [show, setShow] = useState(false);
-  
- 
+  const itemsInCart = cartItems.reduce((a,c) => a + c.qty, 0 );
 
+  const sideBarRef = useRef();
+  useOnClickOutside(sideBarRef, () => setShow(false))
   return (
     // <Router>
       <div>
@@ -28,11 +30,12 @@ const Navbar = (props) => {
             <h6>SHOP</h6>
           </div>
           </Link> */}
-          <div className="cart">
-              <button className="cart-icon" onClick={() => setShow(!show)}> 
-                <i className="fas fa-shopping-cart"></i>
-                <Cart onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} show={show}/>
-              </button>
+          <div  className="cart" onClick={() => setShow(!show)}>
+              <div  className="cart-icon" > 
+                <i  className="fas fa-shopping-cart"></i> 
+                  <Cart ref={sideBarRef} onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} show={show} setShow={setShow}/>
+                  <div className="items-count">{itemsInCart}</div>
+             </div>
               
             </div>
         </nav>
