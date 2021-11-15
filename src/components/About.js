@@ -2,7 +2,7 @@ import React from 'react'
 
 const About = () => {
     return (
-        <div>
+        <div className="about">
             <h1>About Us</h1>
             <p>Welcome to Paradigm Guitars, your number one source for all things guitars. We're dedicated to providing you the very best of guitars, with an emphasis on quality, craftsmanship, and character.</p><br/>
 

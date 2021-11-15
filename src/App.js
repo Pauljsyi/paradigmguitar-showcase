@@ -48,7 +48,7 @@ function App() {
   return (
       <div className="container">   
         <Navbar onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}/>
-        <Cart onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}/>
+        {/* <Cart onAdd={onAdd} onRemove={onRemove} cartItems={cartItems}/> */}
           <Routes> 
               <Route exact path="/" element={<Shop onAdd={onAdd}/>}/>
               <Route path="/about" element={<About/>}/>
