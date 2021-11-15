@@ -55,31 +55,58 @@ nav .logo {
 }
 
 /* Cart Styles */
+/* .col {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-content: space-between
+} */
 
 .col-2 {
-  background: white;
-  color: black;
-  left: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-evenly;
+  padding-left: 5px;
 }
+.cart-item-img {
+  height: 100px;
+  width: 100px;
+}
+
+.col {
+  display: flex;
+  justify-content: space-around;
+}
+
+.qty {
+  margin-left: 30px;
+  
+}
+
 
 .remove, .add {
   color: black;
   background: white;
+  border-radius: 10px;
+  height: 30px;
+  width: 40px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   /* border: white; */
 }
 
-div .row{
+.row{
   background-color: white;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto;
 }
 
-.row-1 {
-  left: 0;
+.row-2 {
+  display: grid;
+  grid-template-columns: auto;
 }
 
 .cart {
-  display: flex;
+  /* display: flex; */
   /* background: #f3f3f3; */
   justify-content: space-between;
   position: relative;
@@ -95,10 +122,11 @@ div .row{
   }
 
 .cart-content {
-  /* display: none; */
+  /* display: grid; */
+  line-height: 2;
   position: absolute;
   min-width: 164px;
-  padding: 12px 16px;
+  padding: 12px 16px 10px 10px;
   z-index: 1;
   margin-top: 25px;
 
@@ -114,24 +142,25 @@ div .row{
 }
 
 .expand  {
-  display: block;
+  display: grid;
   color: black;
   background-color: white;
   position: absolute;
   z-index: 1000;
-  width: 350px;
+  width: 400px;
   top: 0;
   right: 0;
-  padding: 25px;
+  /* padding: 25px; */
   position: fixed;
   overflow: auto;
   height: 100%;
   transition: all ease-in-out 0.3s;
   right: 0;
+  padding: 20px;
 }
 
 .shrink {
-  display: block;
+  display: grid;
   color: black;
   background-color: white;
   position: absolute;
@@ -162,8 +191,28 @@ div .row{
   height: 20px;
 }
 
+.subtotal {
+  display: grid;
+}
+
+.price, .tax, .shipping, .total-price {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+}
+
+
+
+
 .checkout {
-  background-color: rgb(49, 49, 255);
+  background-color: rgb(89, 89, 250);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+  height: 30px;
+  width: 300px;
+  position: relative;
+  top: 900px;
 }
 
 /* Summary */

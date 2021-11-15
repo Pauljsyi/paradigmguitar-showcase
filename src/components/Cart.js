@@ -19,46 +19,55 @@ const Cart = (props) => {
                         <h2 className="cart-title">Cart Items</h2>
                             {cartItems.length === 0 && <div className="cart-is-empty">Cart Is Empty</div>}
                             {cartItems.map((item) => (
-                                <div key={item.id} className="row">
-                                    {/* <div className="buttons">
-                                        <span className="delete-btn">delete</span>
-                                        <span className="like-btn">like</span>
-                                    </div> */}
-                                    <div className="col-2">{item.name}</div>
+                                <div className="row">
                                     <div className="col-2">
-                                    <button onClick={() => onRemove(item)} className="remove">
-                                        -
-                                    </button>{' '}
-                                    <button onClick={() => onAdd(item)} className="add">
-                                        +
-                                    </button>
+                                        <img src={item.img} className="cart-item-img"/>
+                                        <div key={item.id} className="col-2">
+                                            {/* <div className="buttons">
+                                                <span className="delete-btn">delete</span>
+                                                <span className="like-btn">like</span>
+                                            </div> */}
+                                        <div className="col-2">{item.name}</div>
                                     </div>
-                                    <div className="col-2">
-                                        {item.qty} x ${item.price} = ${item.qty * item.price}
+                                    
+                                        <div className="col">
+                                        <button onClick={() => onRemove(item)} className="remove">
+                                            -
+                                        </button>{' '}
+                                        <button onClick={() => onAdd(item)} className="add">
+                                            +
+                                        </button>
+                                        </div>
+                                        <div className="qty">
+                                                qty: {item.qty}
+                                            {/* {item.qty} x ${item.price} = ${item.qty * item.price} */}
+                                        </div>
                                     </div>
+                                    
+                                    <hr></hr>
                                 </div>
                             ))}
                     
                         {cartItems.length !== 0 && (
                             <div className="subtotal">
-                                <hr></hr>
+                                
                                 {/* <div className="row">
                                     <div>Items In Cart</div>
                                     <div>{itemsInCart.toFixed(2)}</div>
                                 </div> */}
-                                <div className="row">
+                                <div className="price">
                                     <div>Subtotal</div>
                                     <div>${guitarPrice.toFixed(2)}</div>
                                 </div>
-                                <div className="row">
+                                <div className="tax">
                                     <div>tax</div>
                                     <div>${tax.toFixed(2)}</div>
                                 </div>
-                                <div className="row">
+                                <div className="shipping">
                                     <div>shipping</div>
                                     <div>${shipping.toFixed(2)}</div>
                                 </div>
-                                <div className="row">
+                                <div className="total-price">
                                     <div>({itemsInCart} items) Total: </div>
                                     <div>${totalPrice.toFixed(2)}</div>
                                 </div>
@@ -69,6 +78,7 @@ const Cart = (props) => {
                         <button className="checkout">CHECKOUT NOW</button>
                     </div>
                 </div>
+                
             </div>
 
         
