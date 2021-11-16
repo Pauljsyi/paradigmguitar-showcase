@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import Cart from './Cart';
 // import GuitarList from './GuitarList'
 // import { useState } from 'react';
-import {BrowserRouter as Router, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import useOnClickOutside from '../hooks/useOnClickOutside'
 
 const Navbar = (props) => {

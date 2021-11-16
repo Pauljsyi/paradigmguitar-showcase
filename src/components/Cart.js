@@ -1,11 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import Summary from './Summary';
+// import Summary from './Summary';
 
 
 
 const Cart = (props) => {
-    const {cartItems, onAdd, onRemove, show, setShow} = props;
+    const {cartItems, onAdd, onRemove, show} = props;
+
+    console.log('cartItems', cartItems)
  
 
     const guitarPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
@@ -13,6 +15,9 @@ const Cart = (props) => {
     const shipping = guitarPrice > 2000 ? 0 : 50;
     const totalPrice = guitarPrice + tax + shipping;
     const itemsInCart = cartItems.reduce((a,c) => a + c.qty, 0 );
+    const localeSubTotal = guitarPrice.toLocaleString('en-US', {style: 'currency', currency: "USD"});
+    const localeTotal = totalPrice.toLocaleString('en-US', {style: 'currency', currency: "USD"});
+
 
     return (
         <div className={ show ? "expand" : "shrink"}>
@@ -23,14 +28,14 @@ const Cart = (props) => {
                             {cartItems.map((item) => (
                                 <div className="row">
                                     <div className="col-2">
-                                        <img src={item.img} className="cart-item-img"/>
+                                        <img src={item.img} className="cart-item-img" alt="guitar"/>
                                         <div key={item.id} className="col-2">
                                             {/* <div className="buttons">
                                                 <span className="delete-btn">delete</span>
                                                 <span className="like-btn">like</span>
                                             </div> */}
                                         <div className="col-2">{item.name}</div>
-                                    </div>
+                                        </div>
                                     
                                         <div className="col">
                                         <button onClick={() => onRemove(item)} className="remove">
@@ -61,7 +66,7 @@ const Cart = (props) => {
                                 </div> */}
                                 <div className="price">
                                     <div>Subtotal</div>
-                                    <div>${guitarPrice.toFixed(2)}</div>
+                                    <div>{localeSubTotal}</div>
                                 </div>
                                 <div className="tax">
                                     <div>tax</div>
@@ -73,13 +78,14 @@ const Cart = (props) => {
                                 </div>
                                 <div className="total-price">
                                     <div>({itemsInCart} items) Total: </div>
-                                    <div>${totalPrice.toFixed(2)}</div>
+                                    <div>{localeTotal}</div>
                                 </div>
                             
                                 <div className="checkout-container">
-                                    <Link to={<Summary/>}><button className="checkout">CHECKOUT NOW</button></Link>
+                                    <Link to="/summary"><button className="checkout" >Go To Summary</button></Link>
                                 </div>
-                            </div>    )}
+                            </div>    
+                        )}
                     </div>   
                     
                 </div>

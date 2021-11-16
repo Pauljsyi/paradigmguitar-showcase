@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
-import axios from 'axios'
+// import axios from 'axios'
 import GuitarItem from './GuitarItem'
-import ProductDetails from './ProductDetails'
-import { BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom'
+// import ProductDetails from './ProductDetails'
+// import { BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom'
 
 const GuitarList = (props) => {
-  const {onAdd, guitarURL, match} = props
+  const {onAdd, guitarURL} = props
   const [guitars, getGuitars] = useState([])
   const url = 'http://127.0.0.1:5000/guitars'
   // console.log('guitarlist = url', guitars._id)
@@ -22,7 +22,7 @@ const GuitarList = (props) => {
   //       console.log(error)
   //     })
   // }, [])
-// console.log('match', match)
+
   useEffect(() => {
     fetchItems();
     

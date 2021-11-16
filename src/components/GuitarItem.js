@@ -4,12 +4,12 @@ import {Link} from 'react-router-dom'
 
 const GuitarItem = (props) => {
   // const [cartItems, setCartItems] = useState([]);
-  const {item, onAdd, match} = props
+  const {item, onAdd} = props
   // console.log("item id?", item)
 
   const guitarurl = `/guitars/${item._id}`;
-  const gURL = "/guitar"
-  // console.log('match', match)
+ 
+
  
   // console.log('item name', item.name);
 
@@ -23,7 +23,7 @@ const GuitarItem = (props) => {
                   <div className="card-container"> 
                   <Link to={guitarurl} >
                     <div className="image-container">
-                      <img src={item && item.id > 8 ? item.img : null} alt='Card Image' />
+                      <img src={item && item.id > 8 ? item.img : null} alt='guitar' />
                     </div>
                     <div className="card-content">
                       <div className="card-title">

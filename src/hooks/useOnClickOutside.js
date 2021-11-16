@@ -1,13 +1,15 @@
+// eslint-disable import/no-anonymous-default-export 
 import { useEffect } from 'react';
 
-export default (ref, handler) => {
+const useOnClickOutside = (ref, handler) => {
+
     useEffect(() => {
         const listener = (event) => {
             if (ref.current && !ref.current.contains(event.target)) {
-                console.log('ref', ref)
-                return
-            }
-            console.log('handler', handler())
+                // console.log('ref', ref)
+                return;
+            };
+            // console.log('handler', handler())
 
             handler();
 
@@ -21,6 +23,9 @@ export default (ref, handler) => {
             // document.removeEventListener('touchstart', listener);
         };
     }, 
-    // [ref, handler]
-    )
-}
+    [ref, handler]
+    );
+};
+
+
+export default useOnClickOutside;
