@@ -18,7 +18,7 @@ const About = () => {
                 <p>
                 Sincerely,<br/><br/>
 
-                Paul Yi</p> 
+                Paradigm Guitar</p> 
             </div>
         </div>
     )

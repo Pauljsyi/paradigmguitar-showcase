@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+import Summary from './Summary';
 
 
 
@@ -43,8 +45,10 @@ const Cart = (props) => {
                                             {/* {item.qty} x ${item.price} = ${item.qty * item.price} */}
                                         </div>
                                     </div>
+                                    <br />
                                     
                                     <hr></hr>
+                                    <br />
                                 </div>
                             ))}
                     
@@ -71,12 +75,13 @@ const Cart = (props) => {
                                     <div>({itemsInCart} items) Total: </div>
                                     <div>${totalPrice.toFixed(2)}</div>
                                 </div>
-                            </div>
-                        )}
+                            
+                                <div className="checkout-container">
+                                    <Link to={<Summary/>}><button className="checkout">CHECKOUT NOW</button></Link>
+                                </div>
+                            </div>    )}
                     </div>   
-                    <div>
-                        <button className="checkout">CHECKOUT NOW</button>
-                    </div>
+                    
                 </div>
                 
             </div>

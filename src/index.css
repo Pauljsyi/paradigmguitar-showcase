@@ -79,7 +79,7 @@ nav .logo {
 
 .qty {
   margin-left: 30px;
-  
+
 }
 
 
@@ -202,22 +202,35 @@ nav .logo {
 }
 
 
-
+.checkout-container {
+  /* margin: auto; */
+  padding: 40px;
+ 
+}
 
 .checkout {
   background-color: rgb(89, 89, 250);
   color: white;
   font-family: Arial, Helvetica, sans-serif;
+  /* justify-content: space-around;
+  */
+  
   font-size: large;
   height: 30px;
   width: 300px;
-  position: relative;
-  top: 900px;
+  position: absolute;
+  bottom: 50px;
+  
 }
 
 /* Summary */
 
-
+/* .button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    margin-left: -104.5px; /*104.5px is half of the button's width
+} */
 
 /* Carousel Styles */
 

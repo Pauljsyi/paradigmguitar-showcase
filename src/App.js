@@ -7,6 +7,7 @@ import GuitarItem from './components/GuitarItem'
 import ProductDetails from './components/ProductDetails';
 import About from './components/About';
 import Shop from './components/Shop';
+import Summary from './components/Summary';
 // import Test from './components/Test';
 import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Switch } from "react-router-dom"
@@ -53,6 +54,7 @@ function App() {
               <Route exact path="/" element={<Shop onAdd={onAdd}/>}/>
               <Route path="/about" element={<About/>}/>
               <Route path="/guitars/:id"  element={<ProductDetails onAdd={onAdd}/>}/>
+              <Route path="/summary" element={<Summary/>}/>
           </Routes>
        
       </div>
