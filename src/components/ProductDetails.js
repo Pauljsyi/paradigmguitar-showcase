@@ -11,17 +11,16 @@ const ProductDetails = (props) => {
     const [item, getItem] = useState({})
     const url = `http://127.0.0.1:5000/guitars/${id}`
   
-//   console.log("match", match)
     useEffect(() => {
         fetchItem();
-        // console.log('id', id)
+        
     })
     
     const fetchItem = async () => {
         const fetchItem = await fetch(url);
         const item = await fetchItem.json();
         getItem(item)
-        // console.log('fetched item', item)
+        
         
     }
 

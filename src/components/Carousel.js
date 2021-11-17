@@ -23,7 +23,21 @@ const Carousel = () => {
 
 
   return (
-    <div className="container">
+    <div className="slider">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       <div className="carousel">
         {
           carouselArr.map((item, index) => {
@@ -32,9 +46,16 @@ const Carousel = () => {
             >{item}</div>
           })
         }
-        <button id="goLeft" onClick={goLeft}><i id="left-arrow" className="fas fa-chevron-left"></i></button>
-        <button id="goRight" onClick={goRight}><i id="right-arrow" className="fas fa-chevron-right"></i></button>
+        <div className="car-buttons">
+          <button id="goLeft" onClick={goLeft}><i id="left-arrow" className="fas fa-chevron-left"></i></button>
+          <button id="goRight" onClick={goRight}><i id="right-arrow" className="fas fa-chevron-right"></i></button>
+        </div>
       </div>
+      
+
+
+      
+
     </div>
   )
 }

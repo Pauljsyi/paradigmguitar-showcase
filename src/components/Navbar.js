@@ -1,25 +1,50 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect} from 'react';
 import Cart from './Cart';
 // import GuitarList from './GuitarList'
 // import { useState } from 'react';
 import {Link} from 'react-router-dom';
 import useOnClickOutside from '../hooks/useOnClickOutside'
+import Logo from './Logo';
 
 const Navbar = (props) => {
   const {onAdd, onRemove, cartItems} = props;
+
+  const [guitars, getGuitars] = useState([])
+  const url = 'http://127.0.0.1:5000/guitars'
+ 
+
+  useEffect(() => {
+    fetchItems();
+    
+}, [])
+
+const fetchItems = async () => {
+    const data = await fetch(url);
+    const items = await data.json();
+    // console.log('fetched items', items)
+    getGuitars(items)
+    
+}
+
   const [show, setShow] = useState(false);
   const itemsInCart = cartItems.reduce((a,c) => a + c.qty, 0 );
+
 
   const sideBarRef = useRef();
   useOnClickOutside(sideBarRef, () => setShow(false))
   return (
     // <Router>
-      <div>
+      
         <nav className="navbar">
-          <Link to="/" className="navLink">
-            <h1 className="logo">Paradigm Guitar</h1> 
+          <Link to="/" className="navLink" id="logo">
+            {/* <img src="" alt="logo" /> */}
+            {guitars.length > 0 ? (guitars.map((guitar, index) => 
+            <Logo item={guitar} key={index} />
+            )): null}
+            
+            {/* <h2>Paradigm Guitar</h2> */}
           </Link>
-          <Link to="/about" className="navLink">
+          <Link to="/about" className="navLink" id="about">
             <h6>ABOUT</h6>
           </Link>
           {/* <Link to="/gallery" className="navLink">
@@ -39,8 +64,6 @@ const Navbar = (props) => {
               
             </div>
         </nav>
-      </div>
-    // </Router>
   )
 }
 

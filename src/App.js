@@ -9,9 +9,9 @@ import About from './components/About';
 import Shop from './components/Shop';
 import Summary from './components/Summary';
 // import Test from './components/Test';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Route, Routes } from "react-router-dom"
-import reactDom from 'react-dom';
+// import reactDom from 'react-dom';
 
 
 
@@ -65,7 +65,7 @@ function App() {
               <Route exact path="/" element={<Shop onAdd={onAdd}/>}/>
               <Route path="/about" element={<About/>}/>
               <Route path="/guitars/:id"  element={<ProductDetails onAdd={onAdd}/>}/>
-              <Route path="/summary" element={<Summary cartItems={cartItems}/>}/>
+              <Route path="/summary" element={<Summary cartItems={cartItems} onAdd={onAdd} onRemove={onRemove}/>}/>
           </Routes>
        
       </div>

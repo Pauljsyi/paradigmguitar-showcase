@@ -6,6 +6,7 @@ const GuitarItem = (props) => {
   // const [cartItems, setCartItems] = useState([]);
   const {item, onAdd} = props
   // console.log("item id?", item)
+  // console.log()
 
   const guitarurl = `/guitars/${item._id}`;
  

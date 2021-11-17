@@ -6,9 +6,19 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
 html {
   background: black;
+  height: 100%;
 }
+
 
 .container {
   background-color: black;
@@ -36,7 +46,7 @@ a {
   position: relative;
   padding-left: 20px;
   padding-right: 20px;
-  min-height: 20vh;
+  min-height: 10vh;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   width: 1080px;
@@ -45,9 +55,25 @@ a {
   
 } 
 
+.logo-container {
+  margin-left: -20px;
+
+}
+
+.paradigm-logo {
+  width: 300px;
+  
+}
+
 .navLink {
   color: white;
 }
+
+#logo{
+  margin-right: -100px;
+}
+
+
 
 nav .logo {
   font-size: 22px;
@@ -82,6 +108,23 @@ nav .logo {
 
 }
 
+.qty-buttons {
+  display: grid;
+  grid-template-columns: 20px 40px 20px;
+  border: 2px;
+}
+
+.item-qty {
+  align-items: center;
+  justify-content: center;
+}
+
+.remove1, .add1 {
+  height: 40px;
+  width: 20px;
+  margin: auto;
+}
+
 
 .remove, .add {
   color: black;
@@ -112,7 +155,7 @@ nav .logo {
   position: relative;
   
   margin-left: 20px;
-  margin-right: 0px;
+  margin-right: 30px;
   /* min-height: 8vh; */
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
@@ -193,6 +236,7 @@ nav .logo {
 
 .subtotal {
   display: grid;
+  margin-bottom: 100px;
 }
 
 .price, .tax, .shipping, .total-price {
@@ -202,18 +246,18 @@ nav .logo {
 }
 
 
-.checkout-container {
+.summary-btn {
   /* margin: auto; */
   padding: 40px;
- 
+  height: 100%;
 }
 
-.checkout {
+.summary-btn-btn {
+  /* display: none; */
   background-color: rgb(89, 89, 250);
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  /* justify-content: space-around;
-  */
+  /* margin-left: 1px; */
   
   font-size: large;
   height: 30px;
@@ -235,8 +279,9 @@ nav .logo {
 /* Carousel Styles */
 
 .carousel {
-  width:  1080px;
-  height: 100%;
+  width: 1080px;
+  min-width: 10%;
+  height: 30%;
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -246,7 +291,7 @@ nav .logo {
   text-align: center;
   overflow: hidden;
   margin-bottom: 0px;
-  background-size: cover;
+  background-size: contain;
   /* margin-top: 50px; */
   
 }
@@ -263,6 +308,10 @@ nav .logo {
   color: black;
   font-size: 1vw;
 
+}
+
+.car-buttons {
+  width: 900px;
 }
 
 #goLeft {
@@ -303,7 +352,7 @@ nav .logo {
 
 .imgStyles {
   width: 1080px;
-  /* height: auto; */
+  height: auto;
   padding: 0;
 }
 
@@ -315,6 +364,14 @@ nav .logo {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+}
+
+.shop-logo {
+  width: 600px;
+}
+
+.shop-logo-container {
+  
 }
 
 main {
@@ -336,9 +393,15 @@ main {
   align-content: center;
   grid-gap: 50px;
   margin-top: 50px;
+  border-radius: 5px;
+  
   
 }
 
+.guitar-container {
+  border-radius: 5px;
+  
+}
 
 /* .container-cards {
   max-width: 100%;
@@ -353,11 +416,12 @@ main {
 }
  
 .card-container {
-  background-color: #39393b;
+  
   cursor: pointer;
   transition: all 0.3s ease 0s;  
   width: 110%;
   height: auto;
+  border-radius: 9px;
   
 }
 
@@ -381,21 +445,20 @@ main {
 
 .card-title {
   margin-bottom: 20px;
-  background-color: #39393b;
-  color: white;
+  
+  color: black;
   
 }
 
-.c-title {
-  background-color: #39393b;
-}
+/* .c-title {
+  background-color: whitesmoke;
+} */
 
 .card-price {
-  color: white;
+  color: black;
   margin-left: auto;
   padding: 5px;
-  border-radius: 20px;
-  background-color: #39393b;
+  
 }
 
  /* .card-container:hover {
@@ -404,11 +467,11 @@ main {
   transition: .5s;
 } */
 
-.card-content {
+/* .card-content {
   margin: 1rem;
-  /* margin-top: 1rem; */
-  background-color: #39393b;
-}
+  margin-top: 1rem;
+  background-color: whitesmoke;
+} */
 
  h3 {
   margin: 0;
@@ -416,24 +479,27 @@ main {
 } 
 
 
-.btn {
-  background-color: #39393b;
-}
+
 
 .btn button {
-  background-color: #39393b;
-  color: white;
+  
+  color: black;
   border-radius: 20px;
   transition: 0.2s;
+  border-color: white;
+
 } 
 
-.add-to-cart {
-  background-color: #39393b;
+.card-container, .card-title, .card-price, .btn button, .add-to-cart {
+  background-color: rgb(24, 29, 39);
+  color: rgb(209, 209, 209);
 }
+
+
 
 /* responsive to window size */
 
-@media only screen and (max-width: 1000px) {
+/* @media only screen and (max-width: 1000px) {
   .card {
     grid-column-end: 6;
   }
@@ -461,7 +527,7 @@ main {
   .card-container {
     grid-column-end: span 6;
   }
-}
+} */
 /* Product Container */
 
 
@@ -469,7 +535,7 @@ main {
 
 
 
-@media screen and (max-width: 1366px) {
+/* @media screen and (max-width: 1366px) {
   .product-container {
     width: 0%;
     display: flex;
@@ -490,7 +556,7 @@ main {
     display: block;
     margin-bottom: 20px;
   }
-}
+} */
 
 /* PRODUCT DETAILS */
 
@@ -498,10 +564,11 @@ main {
   display: flex;
   /* align-items: center; */
   justify-content: center;
-  height: 100%;
+  height: 500px;
   width: 1800px;
   position: relative;
   padding: 5px 5px 5px 5px;
+
 }
 
 .item-display {
@@ -520,6 +587,7 @@ main {
   display: grid;
   color: white;
   padding: 50px 50px 50px 50px;
+  
 
 }
 
@@ -638,19 +706,54 @@ main {
 
 /* SUMMARY */
 
+.container {
+  height: 100%;
+}
+
+.checkout-container {
+  display: grid;
+  grid-template-columns: 60% 20%;
+  margin-left: 150px;
+  padding: 0;
+  height: 100%;
+  width: 100%
+}
+
 .summary-container {
-  color: white;
+  color: oldlace;
+  width: 80%;
+  margin-left: 225px;
+  height: 100%;
+}
+
+.summary-container h2 {
+  position: relative;
+  /* margin: auto; */
+  /* width: 100%; */
+  padding-left: 30px;
+}
+
+.summary-container div {
+  display: grid;
+}
+
+.summary-items{
+  width: 100%;
 }
 
 .summary-item-container {
-  background: white;
+  z-index: 1;
+  background: oldlace;
   color: black;
   display: grid;
   grid-template-columns: 10% 40% 20% 30%;
   text-align: right;
   align-items: center;
-  width: 70%;
+  width: 90%;
   margin: 1px;
+  margin-left: 30px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .summary-img {
@@ -659,6 +762,8 @@ main {
 
 .item-name {
   text-align: left;
+  margin-left: 70px;
+  /* padding-left: 40px; */
 }
 
 .summary-img img{
@@ -668,6 +773,31 @@ main {
 }
 
 .order-summary-container {
-  background: red;
+  margin-top: 29px;
+  background: oldlace;
+  border-radius: 5px;
+  margin-bottom: 100px;
+}
 
+ .collective-price, .sum-shipping, .sum-tax, .sum-total {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-between;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.chkout-btn-container {
+  display: relative;
+  margin: auto;
+  text-align: center;
+}
+
+.check-out-btn {
+  display: relative;
+  height: 40px;
+  width: 300px;
+  font-size: large;
+  background: yellow;
+  
 }

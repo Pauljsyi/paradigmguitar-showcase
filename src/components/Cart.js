@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 const Cart = (props) => {
     const {cartItems, onAdd, onRemove, show} = props;
 
-    console.log('cartItems', cartItems)
+    // console.log('cartItems', cartItems)
  
 
     const guitarPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
@@ -81,8 +81,8 @@ const Cart = (props) => {
                                     <div>{localeTotal}</div>
                                 </div>
                             
-                                <div className="checkout-container">
-                                    <Link to="/summary"><button className="checkout" >Go To Summary</button></Link>
+                                <div className="summary-btn">
+                                    <Link to="/summary"><button className="summary-btn-btn" >Go To Summary</button></Link>
                                 </div>
                             </div>    
                         )}

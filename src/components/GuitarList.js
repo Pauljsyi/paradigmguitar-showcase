@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 // import axios from 'axios'
 import GuitarItem from './GuitarItem'
+// import Navbar from './Navbar';
 // import ProductDetails from './ProductDetails'
 // import { BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom'
 
@@ -37,7 +38,7 @@ const fetchItems = async () => {
 }
 
 
-console.log('guitars', guitars)
+// console.log('guitars', guitars)
 
   
   
@@ -47,9 +48,7 @@ console.log('guitars', guitars)
           guitars && guitars.length > 0 ? (guitars.map((guitar, index) => 
           <GuitarItem item={guitar} key={index} onAdd={onAdd} guitarURL={guitarURL}/>)) : null
         }
-        {/* <Routes>
-              <Route path="/guitars/:id" element={<ProductDetails />}/>
-              </Routes> */}
+        
     </div>
   )
 }
