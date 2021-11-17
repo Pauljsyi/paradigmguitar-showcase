@@ -59,7 +59,7 @@ const fetchItems = async () => {
               <div  className="cart-icon" > 
                 <i  className="fas fa-shopping-cart"></i> 
                   <Cart ref={sideBarRef} onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} show={show} setShow={setShow}/>
-                  <div className="items-count">{itemsInCart}</div>
+                  <div className="items-count">{itemsInCart}</div> 
              </div>
               
             </div>
