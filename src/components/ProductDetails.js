@@ -10,7 +10,7 @@ const ProductDetails = (props) => {
     useEffect(() => {
         fetchItem();
         
-    },[])
+    })
     
     const fetchItem = async () => {
         const fetchItem = await fetch(url);
@@ -20,9 +20,6 @@ const ProductDetails = (props) => {
         
     }
 
-    // console.log("PRODUCT DETAILS guitar",guitar)
-
-//   console.log('props', props)
     return (
         <div className="pd-container">
             

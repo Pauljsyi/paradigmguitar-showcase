@@ -5,7 +5,6 @@ const controller = {
     //get all request 
     helpers.getAll(req.params)
       .then((result) => {
-        console.log('controller: got results')
         res.send(result);
       })
       .catch((error) => {
