@@ -1,30 +1,21 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from 'react';
+import {Link} from 'react-router-dom';
 
 
 const GuitarItem = (props) => {
-  // const [cartItems, setCartItems] = useState([]);
-  const {item, onAdd} = props
-  // console.log("item id?", item)
-  // console.log()
-
+  const {item, onAdd} = props;
   const guitarurl = `/guitars/${item._id}`;
- 
-
- 
-  // console.log('item name', item.name);
-
-   return (
-     
+   
+  return (
       <div className="guitar-container">
         <main>
-          {item.price !== 0 ? 
+          {item.id > 8 ? 
               <div className="container">
                 <div className="container-cards">
                   <div className="card-container"> 
                   <Link to={guitarurl} >
                     <div className="image-container">
-                      <img src={item && item.id > 8 ? item.img : null} alt='guitar' />
+                      <img className="guitar-img" src={item && item.id > 8 ? item.img : null} alt='guitar' />
                     </div>
                     <div className="card-content">
                       <div className="card-title">
@@ -43,7 +34,9 @@ const GuitarItem = (props) => {
                   </div>
                 </div> 
               </div> 
-          : null}
+          : <div>card</div> };
+          
+          
         </main>
         {/* <Card 
           title={item && item.id > 8 ? item.name : null}
@@ -54,7 +47,7 @@ const GuitarItem = (props) => {
 
       </div>
  
-  ) 
-}
+  );
+};
 
-export default GuitarItem
+export default GuitarItem;

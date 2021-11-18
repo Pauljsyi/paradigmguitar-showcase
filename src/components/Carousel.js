@@ -14,30 +14,16 @@ const Carousel = () => {
   const [x, setX] = useState(0);
   let carouselArr = [<Images src={custom}/>, <Images src={luthier} />, <Images src={musician} />, <Images src={vintage} />];
   const goLeft = () => {
-    x === 0 ? setX(-100 * (carouselArr.length - 1)) : setX(x + 100)
+    x === 0 ? setX(-100 * (carouselArr.length - 1)) : setX(x + 100);
   };
   const goRight = () => {
-    x === -100 * (carouselArr.length - 1) ? setX(0) : setX(x - 100)
+    x === -100 * (carouselArr.length - 1) ? setX(0) : setX(x - 100);
     
-  }
+  };
 
 
   return (
     <div className="slider">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <div className="carousel">
         {
           carouselArr.map((item, index) => {
@@ -45,19 +31,14 @@ const Carousel = () => {
             style={{transform: `translateX(${x}%)`}}
             >{item}</div>
           })
-        }
+        };
         <div className="car-buttons">
           <button id="goLeft" onClick={goLeft}><i id="left-arrow" className="fas fa-chevron-left"></i></button>
           <button id="goRight" onClick={goRight}><i id="right-arrow" className="fas fa-chevron-right"></i></button>
         </div>
       </div>
-      
-
-
-      
-
     </div>
-  )
-}
+  );
+};
 
-export default Carousel
+export default Carousel;

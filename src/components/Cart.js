@@ -1,24 +1,18 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-// import Summary from './Summary';
 
 
 
 const Cart = (props) => {
-    const {cartItems, onAdd, onRemove, show} = props;
-
-    // console.log('cartItems', cartItems)
- 
-
-    const guitarPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
-    const tax = guitarPrice * 0.095;
-    const shipping = guitarPrice > 2000 ? 0 : 50;
-    const totalPrice = guitarPrice + tax + shipping;
-    const itemsInCart = cartItems.reduce((a,c) => a + c.qty, 0 );
-    const localeSubTotal = guitarPrice.toLocaleString('en-US', {style: 'currency', currency: "USD"});
-    const localeTotal = totalPrice.toLocaleString('en-US', {style: 'currency', currency: "USD"});
-
-
+        const {cartItems, onAdd, onRemove, show} = props;
+        const guitarPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
+        const tax = guitarPrice * 0.095;
+        const shipping = guitarPrice > 2000 ? 0 : 50;
+        const totalPrice = guitarPrice + tax + shipping;
+        const itemsInCart = cartItems.reduce((a,c) => a + c.qty, 0 );
+        const localeSubTotal = guitarPrice.toLocaleString('en-US', {style: 'currency', currency: "USD"});
+        const localeTotal = totalPrice.toLocaleString('en-US', {style: 'currency', currency: "USD"});
+    
     return (
         <div className={ show ? "expand" : "shrink"}>
                 <div>
@@ -47,23 +41,16 @@ const Cart = (props) => {
                                         </div>
                                         <div className="qty">
                                                 qty: {item.qty}
-                                            {/* {item.qty} x ${item.price} = ${item.qty * item.price} */}
                                         </div>
                                     </div>
                                     <br />
-                                    
-                                    <hr></hr>
+                                    <hr/>
                                     <br />
                                 </div>
                             ))}
                     
                         {cartItems.length !== 0 && (
                             <div className="subtotal">
-                                
-                                {/* <div className="row">
-                                    <div>Items In Cart</div>
-                                    <div>{itemsInCart.toFixed(2)}</div>
-                                </div> */}
                                 <div className="price">
                                     <div>Subtotal</div>
                                     <div>{localeSubTotal}</div>
@@ -80,20 +67,15 @@ const Cart = (props) => {
                                     <div>({itemsInCart} items) Total: </div>
                                     <div>{localeTotal}</div>
                                 </div>
-                            
                                 <div className="summary-btn">
                                     <Link to="/summary"><button className="summary-btn-btn" >Go To Summary</button></Link>
                                 </div>
                             </div>    
                         )}
                     </div>   
-                    
                 </div>
-                
             </div>
+    );
+};
 
-        
-    )
-}
-
-export default Cart
+export default Cart;

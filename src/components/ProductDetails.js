@@ -1,12 +1,8 @@
 import React, {useState, useEffect} from 'react'
-// import GuitarList from './GuitarList';
-// import GuitarItem from './GuitarItem';
 import { useParams } from 'react-router-dom';
-// import axios from 'axios';
 
 const ProductDetails = (props) => {
     const { onAdd } = props;
-    // console.log('onadd', onAdd)
     const { id } = useParams();
     const [item, getItem] = useState({})
     const url = `http://127.0.0.1:5000/guitars/${id}`
@@ -14,7 +10,7 @@ const ProductDetails = (props) => {
     useEffect(() => {
         fetchItem();
         
-    })
+    },[])
     
     const fetchItem = async () => {
         const fetchItem = await fetch(url);
@@ -31,7 +27,7 @@ const ProductDetails = (props) => {
         <div className="pd-container">
             
             <div className="item-display">
-                <img src={item.img} alt={item.id} />
+                <img className="guitar-img" src={item.img} alt={item.id} />
            </div>
             <div className="item-details">
                 <h1 className="black">{item.name}</h1>
