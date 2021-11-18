@@ -21,7 +21,7 @@ const About = () => {
                 Paradigm Guitar</p> 
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default About

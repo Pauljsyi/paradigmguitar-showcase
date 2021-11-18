@@ -1,17 +1,11 @@
-import React, {useState, useEffect} from 'react'
-// import axios from 'axios'
-import GuitarItem from './GuitarItem'
-// import Navbar from './Navbar';
-// import ProductDetails from './ProductDetails'
-// import { BrowserRouter as Router, Switch, Route, Routes} from 'react-router-dom'
+import React, {useState, useEffect} from 'react';
+import GuitarItem from './GuitarItem';
 
 const GuitarList = (props) => {
-  const {onAdd, guitarURL} = props
-  const [guitars, getGuitars] = useState([])
-  const url = 'http://127.0.0.1:5000/guitars'
-  // console.log('guitarlist = url', guitars._id)
-
-
+  const {onAdd, guitarURL} = props;
+  const [guitars, getGuitars] = useState([]);
+  const url = 'http://127.0.0.1:5000/guitars';
+ 
   // useEffect(() => {
   //   axios.get(url)
   //     .then(response => {
@@ -32,25 +26,32 @@ const GuitarList = (props) => {
 const fetchItems = async () => {
     const data = await fetch(url);
     const items = await data.json();
-    // console.log('fetched items', items)
     getGuitars(items)
-    
 }
 
 
-// console.log('guitars', guitars)
 
-  
-  
+const onlyGuitars = (guitar) => {
+  let guitarArr = [];
+  for (let i = 0; i < guitar.length; i++) {
+    if (guitar[i].id > 8) {
+      guitarArr.push(guitar[i])
+    };
+  };
+  return guitarArr;
+};
+
+const onlyGuitarsList = onlyGuitars(guitars);
+
   return (
     <div className="product-container">
         {
-          guitars && guitars.length > 0 ? (guitars.map((guitar, index) => 
-          <GuitarItem item={guitar} key={index} onAdd={onAdd} guitarURL={guitarURL}/>)) : null
+          guitars && guitars.length > 0 ? (onlyGuitarsList.map((guitar, index) => 
+          <GuitarItem item={guitar} key={index} onAdd={onAdd} guitarURL={guitarURL} guitars={guitars}/>)) : null
         }
         
     </div>
-  )
-}
+  );
+};
 
-export default GuitarList
+export default GuitarList;
