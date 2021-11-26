@@ -4,6 +4,7 @@
   /* background-color: black; */
   /* position:inherit */
   font-family: Arial, Helvetica, sans-serif;
+  cursor: crosshair;
 }
 
 body {
@@ -297,7 +298,7 @@ nav .logo {
 }
 
 .carousel-item {
-  width: 1080px;
+  width: 80%;
   min-width: 100%;
   height: 400px;
   transition: .5s;
@@ -714,7 +715,7 @@ nav .logo {
 .summary-container {
   color: oldlace;
   width: 80%;
-  margin-left: 225px;
+  margin-left: 200px;
   height: 100%;
 }
 
@@ -765,11 +766,17 @@ nav .logo {
 }
 
 .order-summary-container {
-  margin-top: 290px;
+  margin-top: 30px;
   background: oldlace;
   border-radius: 5px;
   margin-bottom: 100px;
+  text-indent: 15px;
 }
+
+.order-summary-container h2{
+  text-indent: 15px;
+}
+
 
  .collective-price, .sum-shipping, .sum-tax, .sum-total {
   display: grid;
@@ -777,6 +784,7 @@ nav .logo {
   justify-content: space-between;
   margin-right: 5px;
   margin-left: 5px;
+  text-indent: 15px;
 }
 
 .chkout-btn-container {
@@ -793,3 +801,287 @@ nav .logo {
   background: yellow;
   
 }
+
+
+.add1 div {
+  align-items: center;
+  justify-content: center;
+  /* border: none; */
+}
+
+.add1, .remove1 {
+  border: none;
+}
+
+.remove1 div {
+  align-items: center;
+  justify-content: center;
+}
+
+.item-q {
+  width: 80px;
+  border: 1px solid black;
+  border-radius: 1px;
+  margin-left: 100px;
+}
+
+.item-qty {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+@media all and (max-width: 5000px) {
+  .navbar {
+    width: 2000px;
+    height: 50px;
+  }
+  .paradigm-logo {
+    width: 500px;
+  }
+  .carousel {
+    width: 2000px;
+    height: 700px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    /* margin-bottom: 0px; */
+    background-size: contain;
+    /* margin-top:-100px; */
+    /* top: -100px; */
+    
+  }
+
+  .carousel-item {
+    height: 700px;
+  }
+
+.imgStyles {
+  width: 2000px;
+}
+}
+
+
+
+
+@media all and (max-width: 2000px) {
+
+  .navbar {
+    width: 1080px;
+    height: 50px;
+  }
+  .paradigm-logo {
+    width: 300px;
+  }
+  .shop-logo {
+    width: 400px;
+  }
+  .carousel {
+    width: 1080px;
+    height: 400px;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+    /* margin-bottom: 0px; */
+    background-size: contain;
+    /* margin-top:-100px; */
+    /* top: -100px; */
+    
+  }
+
+  .carousel-item {
+    height: 400px;
+  }
+
+.imgStyles {
+  width: 1080px;
+}
+
+}
+
+@media all and (max-width: 1024px) {
+
+  .navbar {
+    width: 900px;
+  }
+
+.carousel {
+  width: 800px;
+  height: 400px;
+  /* justify-content: space-around; */
+}
+
+.imgStyles {
+  width: 1000px;
+}
+
+}
+
+
+ @media all and (max-width: 900px) {
+
+ 
+
+  .expand {
+    width: 80%;
+  }
+
+  .about, .about-container {
+    width: 90%;
+    text-align:justify;
+  }
+
+  .about {
+    margin: auto;
+  }
+
+  .about-container {
+    margin: auto;
+  }
+
+  .navbar {
+    width: 300px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .paradigm-logo {
+    width: 200px;
+  }
+
+  #about {
+    margin-left: 70px;
+  }
+
+  .carousel {
+    width: 375px;
+    height: 200px;
+  }
+
+  .carousel-item {
+    height: 200px;
+  }
+
+  .shop-logo {
+    width: 300px
+  }
+
+  .imgStyles {
+    width: 375px;
+    height: 200px;
+  }
+
+  .product-container {
+    display: block;
+    margin: auto;
+    width: 500px;
+    max-width: 300px;
+  }
+  .guitar-container {
+    margin-bottom: 20px;
+  }
+
+  .card-content, .container-cards, .guitar-container {
+    width: 300px;
+  }
+  .pd-container {
+    display: block;
+    width: 300px;
+    height: 100%;
+    margin: auto;
+  }
+
+  .item-display {
+    width: 300px;
+  }
+
+  .item-display img {
+    padding: 0;
+    width: 300px;
+  }
+
+  .guitar-img {
+    position: relative;
+    width: 300px;
+    padding: 0;
+  }
+
+  .item-details {
+    padding: 0;
+  }
+
+  .item-details h1 {
+    font-size: medium;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .item-details button {
+    margin-top: 10px;
+  }
+
+
+   .checkout-container {
+    /* display: grid; */
+    position: relative;
+    /* grid-template-rows: auto; */
+    margin-left: 0;
+    width: 375px;
+    height: 1000px;
+  }
+
+  .summary-container {
+    margin-top: 350px;
+    display: grid;
+    margin-left: 0;
+    width: 375px;
+    
+    height: 100px;
+  }
+
+  .summary-container h2 {
+    /* height: 100px; */
+  }
+
+  .summary-items {
+    width: 375px;
+  }
+
+  .summary-item-container {
+    width: 360px;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 5;
+  }
+
+  .item-name {
+    margin-left: 0;
+    padding-left: 10px;
+  }
+
+  .item-q {
+    margin-left: 50px
+  }
+  
+  .order-summary-container {
+    
+    position: absolute;
+    width: 360px;
+    margin: auto;
+    
+  }
+}
+
+
+
+

@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 
 
 
+
+
 const Cart = (props) => {
         const {cartItems, onAdd, onRemove, show} = props;
         const guitarPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
@@ -13,9 +15,12 @@ const Cart = (props) => {
         const localeSubTotal = guitarPrice.toLocaleString('en-US', {style: 'currency', currency: "USD"});
         const localeTotal = totalPrice.toLocaleString('en-US', {style: 'currency', currency: "USD"});
     
+
+        
+        
     return (
         <div className={ show ? "expand" : "shrink"}>
-                <div>
+                    <div>
                     <div className="cart-content">
                         <h2 className="cart-title">Cart Items</h2>
                             {cartItems.length === 0 && <div className="cart-is-empty">Cart Is Empty</div>}

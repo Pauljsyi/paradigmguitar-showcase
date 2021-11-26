@@ -5,7 +5,7 @@ const ShopLogo = (props) => {
 
     return (
         <div className="shop-logo-container">
-            {item.id === 4 ? <img className="shop-logo" src={item.img} alt="" /> : null}
+            {item.name === "logo-shopguitars" ? <img className="shop-logo" src={item.img} alt="" /> : null}
         </div>
     );
 };

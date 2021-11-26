@@ -9,7 +9,8 @@ const Shop = (props) => {
     const { onAdd} = props;
 
     const [guitars, getGuitars] = useState([]);
-    const url = 'http://127.0.0.1:5000/guitars';
+    // const url = 'http://127.0.0.1:5000/guitars';
+    const url = '/guitars';
 
     useEffect(() => {
       fetchItems();

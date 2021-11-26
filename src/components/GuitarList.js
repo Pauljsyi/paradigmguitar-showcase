@@ -4,7 +4,8 @@ import GuitarItem from './GuitarItem';
 const GuitarList = (props) => {
   const {onAdd, guitarURL} = props;
   const [guitars, getGuitars] = useState([]);
-  const url = 'http://127.0.0.1:5000/guitars';
+  // const url = 'http://127.0.0.1:5000/guitars';
+  const url = `/guitars`
  
   // useEffect(() => {
   //   axios.get(url)

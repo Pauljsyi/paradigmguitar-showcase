@@ -23,7 +23,7 @@ const Carousel = () => {
 
 
   return (
-    <div className="slider">
+    
       <div className="carousel">
         {
           carouselArr.map((item, index) => {
@@ -37,7 +37,7 @@ const Carousel = () => {
           <button id="goRight" onClick={goRight}><i id="right-arrow" className="fas fa-chevron-right"></i></button>
         </div>
       </div>
-    </div>
+   
   );
 };
 

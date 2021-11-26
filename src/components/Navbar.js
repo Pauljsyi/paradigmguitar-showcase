@@ -4,11 +4,13 @@ import {Link} from 'react-router-dom';
 import useOnClickOutside from '../hooks/useOnClickOutside'
 import Logo from './Logo';
 
+
 const Navbar = (props) => {
   const {onAdd, onRemove, cartItems} = props;
 
   const [guitars, getGuitars] = useState([]);
-  const url = 'http://127.0.0.1:5000/guitars';
+  // const url = 'http://127.0.0.1:5000/guitars';
+  const url = `/guitars`
  
 
   useEffect(() => {
@@ -29,6 +31,7 @@ const fetchItems = async () => {
 
   const sideBarRef = useRef();
   useOnClickOutside(sideBarRef, () => setShow(false))
+  
   return (
       
         <nav className="navbar">
@@ -37,16 +40,42 @@ const fetchItems = async () => {
             <Logo item={guitar} key={index} />
             )): null}
           </Link>
-          <Link to="/about" className="navLink" id="about">
-            <h6>ABOUT</h6>
-          </Link>
-          <div  className="cart" onClick={() => setShow(!show)}>
-              <div  className="cart-icon" > 
-                <i  className="fas fa-shopping-cart"></i> 
-                  <Cart ref={sideBarRef} onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} show={show} setShow={setShow}/>
-                  <div className="items-count">{itemsInCart}</div> 
+
+
+              {/* desktop view */}
+          
+          
+            <Link to="/about" className="navLink" id="about">
+              <h6 className="hamburger-menu">ABOUT</h6>
+            </Link>
+            <div  className="hamburger-menu" id="cart" onClick={() => setShow(!show)}>
+                <div  className="cart-icon" > 
+                  <i  className="fas fa-shopping-cart"></i> 
+                    
+                    <Cart ref={sideBarRef} onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} show={show} setShow={setShow}/>
+                    <div className="items-count">{itemsInCart}</div> 
+                </div>
               </div>
-            </div>
+          
+
+
+              {/* mobile view */}
+            {/* <div className="menu_icon"><span></span></div>
+            <div className="menu_desktop">
+            <Link to="/about" className="navLink" id="about">
+              <h6 className="hamburger-menu">ABOUT</h6>
+            </Link>
+            <div  className="hamburger-menu" id="cart" onClick={() => setShow(!show)}>
+                <div  className="cart-icon" > 
+                  <i  className="fas fa-shopping-cart"></i> 
+                    <Cart ref={sideBarRef} onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} show={show} setShow={setShow}/>
+                    <div className="items-count">{itemsInCart}</div> 
+                </div>
+              </div>
+            </div> */}
+
+
+
         </nav>
   );
 };

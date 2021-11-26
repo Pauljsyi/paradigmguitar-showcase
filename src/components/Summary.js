@@ -24,14 +24,14 @@ const Summary = (props) => {
                         <div key={item.id} className="item-name">
                             {item.name}
                         </div>
-                        <div className="item-qty">
+                        <div className="item-q">
                         <div className="qty-buttons">
                             <button onClick={() => onRemove(item)} className="remove1">
-                                -
+                                <div>-</div>
                             </button>
                             <div className="item-qty" >{item.qty}</div> 
                             <button onClick={() => onAdd(item)} className="add1">
-                                +
+                                <div>+</div>
                             </button>
                             </div>
                         </div>

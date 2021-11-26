@@ -4,8 +4,7 @@ import {Link} from 'react-router-dom';
 
 const GuitarItem = (props) => {
   const {item, onAdd} = props;
-  const guitarurl = `/guitars/${item._id}`;
-   
+
   return (
       <div className="guitar-container">
         <main>
@@ -13,7 +12,7 @@ const GuitarItem = (props) => {
               <div className="container">
                 <div className="container-cards">
                   <div className="card-container"> 
-                  <Link to={guitarurl} >
+                  <Link to={`/productdetail/${item._id}`}>
                     <div className="image-container">
                       <img className="guitar-img" src={item && item.id > 8 ? item.img : null} alt='guitar' />
                     </div>
@@ -34,7 +33,7 @@ const GuitarItem = (props) => {
                   </div>
                 </div> 
               </div> 
-          : <div>card</div> };
+          : null }
           
           
         </main>

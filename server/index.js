@@ -19,6 +19,10 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'))
 });
 
+// app.get('/guitars/:_id', function (req, res) {
+//   res.sendFile(path.join(__dirname, 'build', 'index.html'))
+// });
+
 app.listen(port, () => {
   console.log(`Server is listening of port ${port}`)
 });
