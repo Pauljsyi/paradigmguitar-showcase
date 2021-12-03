@@ -1,66 +1,63 @@
-import React, { useState, useRef, useEffect} from 'react';
-import Cart from './Cart';
-import {Link} from 'react-router-dom';
-import useOnClickOutside from '../hooks/useOnClickOutside'
-import Logo from './Logo';
-
+import React, { useState, useRef, useEffect } from "react";
+import Cart from "./Cart";
+import { Link } from "react-router-dom";
+import useOnClickOutside from "../hooks/useOnClickOutside";
+import Logo from "./Logo";
 
 const Navbar = (props) => {
-  const {onAdd, onRemove, cartItems} = props;
+  const { onAdd, onRemove, cartItems } = props;
 
   const [guitars, getGuitars] = useState([]);
-  // const url = 'http://127.0.0.1:5000/guitars';
-  const url = `/guitars`
- 
+  const url = "http://127.0.0.1:5000/guitars";
+  // const url = `/guitars`
 
   useEffect(() => {
     fetchItems();
-    
-}, []);
+  }, []);
 
-const fetchItems = async () => {
+  const fetchItems = async () => {
     const data = await fetch(url);
     const items = await data.json();
     getGuitars(items);
-    
-};
+  };
 
   const [show, setShow] = useState(false);
-  const itemsInCart = cartItems.reduce((a,c) => a + c.qty, 0 );
-
+  const itemsInCart = cartItems.reduce((a, c) => a + c.qty, 0);
 
   const sideBarRef = useRef();
-  useOnClickOutside(sideBarRef, () => setShow(false))
-  
+  useOnClickOutside(sideBarRef, () => setShow(false));
+
   return (
-      
-        <nav className="navbar">
-          <Link to="/" className="navLink" id="logo">
-            {guitars.length > 0 ? (guitars.map((guitar, index) => 
-            <Logo item={guitar} key={index} />
-            )): null}
-          </Link>
+    <nav>
+      <Link to="/" className="navLink" id="logo">
+        {guitars.length > 0
+          ? guitars.map((guitar, index) => <Logo item={guitar} key={index} />)
+          : null}
+      </Link>
 
+      {/* desktop view */}
 
-              {/* desktop view */}
-          
-          
-            <Link to="/about" className="navLink" id="about">
-              <h6 className="hamburger-menu">ABOUT</h6>
-            </Link>
-            <div  className="hamburger-menu" id="cart" onClick={() => setShow(!show)}>
-                <div  className="cart-icon" > 
-                  <i  className="fas fa-shopping-cart"></i> 
-                    
-                    <Cart ref={sideBarRef} onAdd={onAdd} onRemove={onRemove} cartItems={cartItems} show={show} setShow={setShow}/>
-                    <div className="items-count">{itemsInCart}</div> 
-                </div>
-              </div>
-          
+      <Link to="/about" className="navLink" id="about">
+        <h6>ABOUT</h6>
+      </Link>
+      <div className="cart" onClick={() => setShow(!show)}>
+        <div className="cart-icon">
+          <i className="fas fa-shopping-cart"></i>
 
+          <Cart
+            ref={sideBarRef}
+            onAdd={onAdd}
+            onRemove={onRemove}
+            cartItems={cartItems}
+            show={show}
+            setShow={setShow}
+          />
+          <div className="items-count">{itemsInCart}</div>
+        </div>
+      </div>
 
-              {/* mobile view */}
-            {/* <div className="menu_icon"><span></span></div>
+      {/* mobile view */}
+      {/* <div className="menu_icon"><span></span></div>
             <div className="menu_desktop">
             <Link to="/about" className="navLink" id="about">
               <h6 className="hamburger-menu">ABOUT</h6>
@@ -73,11 +70,8 @@ const fetchItems = async () => {
                 </div>
               </div>
             </div> */}
-
-
-
-        </nav>
+    </nav>
   );
 };
 
-export default Navbar
+export default Navbar;

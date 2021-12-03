@@ -1,43 +1,50 @@
-import React, {useState} from 'react';
-import Images from './Images';
-import custom from '../featured/custom.jpg';
-import luthier from '../featured/luthier.jpg';
-import vintage from '../featured/vintage.jpg';
-import musician from '../featured/musician.jpg';
-
-
+import React, { useState } from "react";
+import Images from "./Images";
+import custom from "../assets/custom.jpg";
+import luthier from "../assets/luthier.jpg";
+import vintage from "../assets/vintage.jpg";
+import musician from "../assets/musician.jpg";
 
 const Carousel = () => {
-
   // create an array of assets to display inside carousel
-  
+
   const [x, setX] = useState(0);
-  let carouselArr = [<Images src={custom}/>, <Images src={luthier} />, <Images src={musician} />, <Images src={vintage} />];
+  let carouselArr = [
+    <Images src={custom} />,
+    <Images src={luthier} />,
+    <Images src={musician} />,
+    <Images src={vintage} />,
+  ];
   const goLeft = () => {
     x === 0 ? setX(-100 * (carouselArr.length - 1)) : setX(x + 100);
   };
   const goRight = () => {
     x === -100 * (carouselArr.length - 1) ? setX(0) : setX(x - 100);
-    
   };
 
-
   return (
-    
-      <div className="carousel">
-        {
-          carouselArr.map((item, index) => {
-            return <div key={index} className="carousel-item"
-            style={{transform: `translateX(${x}%)`}}
-            >{item}</div>
-          })
-        };
-        <div className="car-buttons">
-          <button id="goLeft" onClick={goLeft}><i id="left-arrow" className="fas fa-chevron-left"></i></button>
-          <button id="goRight" onClick={goRight}><i id="right-arrow" className="fas fa-chevron-right"></i></button>
-        </div>
+    <div className="carousel">
+      {carouselArr.map((item, index) => {
+        return (
+          <div
+            key={index}
+            className="carousel-item"
+            style={{ transform: `translateX(${x}%)` }}
+          >
+            {item}
+          </div>
+        );
+      })}
+      ;
+      <div className="car-buttons">
+        <button id="goLeft" onClick={goLeft}>
+          <i id="left-arrow" className="fas fa-chevron-left"></i>
+        </button>
+        <button id="goRight" onClick={goRight}>
+          <i id="right-arrow" className="fas fa-chevron-right"></i>
+        </button>
       </div>
-   
+    </div>
   );
 };
 
