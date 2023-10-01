@@ -2,7 +2,7 @@
 
 config/default.json
 
-
+/server
 # dependencies
 /node_modules
 /.pnp
